@@ -59,12 +59,12 @@ BLYNK_WRITE(V7) { colorS = param.asInt(); }
 BLYNK_WRITE(V8) { colorV = param.asInt(); }
 BLYNK_WRITE(V9) { colorSpread = param.asInt(); }
 BLYNK_WRITE(V10) {
-  	for(int i = 0; i < NUM_LEDS; i++) {
-    	leds[i] = deadBlack;
-    	FastLED.delay(30);
-    	FastLED.show();
-  	}
-  	ESP.reset();
+      for(int i = 0; i < NUM_LEDS; i++) {
+        leds[i] = deadBlack;
+        FastLED.delay(30);
+        FastLED.show();
+      }
+      ESP.reset();
 }
 
 BLYNK_WRITE(V12) { colorH_g1 = param.asInt(); }
@@ -79,168 +79,168 @@ BLYNK_WRITE(V11) { currentMode = (assistantOverride) ? param.asInt() : currentMo
 // Preset list - only for assistant functionality - add as much as needed.
 
 BLYNK_WRITE(V20) {
-	presetLights = (assistantOverride) ? param.asString() : "none";
+    presetLights = (assistantOverride) ? param.asString() : "none";
 
-	if (presetLights == "gaming"){
-		currentMode = 4;
-		currentSpeed = 15;
-		presetLights = "none";
-	}
-	else if (presetLights == "ultrakill") {
-		currentMode = 3;
-		colorSpread = 10;
-		currentSpeed = 20;
-		colorH = 10;
-		colorS = 255;
-		colorV = 255;
-		presetLights = "none";
-	}
-	else if (presetLights == "candy") {
-		currentMode = 5;
-		colorH_g1 = 40;
-		colorH_g2 = 0;
-		colorS_g1 = 255;
-		colorS_g2 = 255;
-		colorV_g1 = 255;
-		colorV_g2 = 255;
-		gradientMode = 1;
-		presetLights = "none";
-	}
-	else if (presetLights == "retro") {
-		currentMode = 5;
-		colorH_g1 = 210;
-		colorH_g2 = 140;
-		colorS_g1 = 255;
-		colorS_g2 = 255;
-		colorV_g1 = 255;
-		colorV_g2 = 255;
-		gradientMode = 2;
-		presetLights = "none";
-	}
-	else if (presetLights == "rainbow") {
-		currentMode = 2;
-		currentSpeed = 15;
-		presetLights = "none";
-	}
-	else if (presetLights == "mint") {
-		currentMode = 3;
-		currentSpeed = 15;
-		colorSpread = 20;
-		colorH = 125;
-		colorS = 190;
-		colorV = 255;
-		presetLights = "none";
-	}
-	else if (presetLights == "night") {
-		currentMode = 3;
-		currentSpeed = 15;
-		colorSpread = 20;
-		colorH = 170;
-		colorS = 200;
-		colorV = 100;
-		presetLights = "none";
-	}
-	else if (presetLights == "rainy") {
-		currentMode = 1;
-		colorH = 160;
-		colorS = 255;
-		colorV = 75;
-		presetLights = "none";
-	}
-	else if (presetLights == "sunny") {
-		currentMode = 3;
-		currentSpeed = 20;
-		colorSpread = 5;
-		colorH = 60;
-		colorS = 255;
-		colorV = 255;
-		presetLights = "none";
-	}
+    if (presetLights == "gaming"){
+        currentMode = 4;
+        currentSpeed = 15;
+        presetLights = "none";
+    }
+    else if (presetLights == "ultrakill") {
+        currentMode = 3;
+        colorSpread = 10;
+        currentSpeed = 20;
+        colorH = 10;
+        colorS = 255;
+        colorV = 255;
+        presetLights = "none";
+    }
+    else if (presetLights == "candy") {
+        currentMode = 5;
+        colorH_g1 = 40;
+        colorH_g2 = 0;
+        colorS_g1 = 255;
+        colorS_g2 = 255;
+        colorV_g1 = 255;
+        colorV_g2 = 255;
+        gradientMode = 1;
+        presetLights = "none";
+    }
+    else if (presetLights == "retro") {
+        currentMode = 5;
+        colorH_g1 = 210;
+        colorH_g2 = 140;
+        colorS_g1 = 255;
+        colorS_g2 = 255;
+        colorV_g1 = 255;
+        colorV_g2 = 255;
+        gradientMode = 2;
+        presetLights = "none";
+    }
+    else if (presetLights == "rainbow") {
+        currentMode = 2;
+        currentSpeed = 15;
+        presetLights = "none";
+    }
+    else if (presetLights == "mint") {
+        currentMode = 3;
+        currentSpeed = 15;
+        colorSpread = 20;
+        colorH = 125;
+        colorS = 190;
+        colorV = 255;
+        presetLights = "none";
+    }
+    else if (presetLights == "night") {
+        currentMode = 3;
+        currentSpeed = 15;
+        colorSpread = 20;
+        colorH = 170;
+        colorS = 200;
+        colorV = 100;
+        presetLights = "none";
+    }
+    else if (presetLights == "rainy") {
+        currentMode = 1;
+        colorH = 160;
+        colorS = 255;
+        colorV = 75;
+        presetLights = "none";
+    }
+    else if (presetLights == "sunny") {
+        currentMode = 3;
+        currentSpeed = 20;
+        colorSpread = 5;
+        colorH = 60;
+        colorS = 255;
+        colorV = 255;
+        presetLights = "none";
+    }
 }
 
 BLYNK_CONNECTED() {
-	Blynk.syncAll();
-	for(int i = 0; i < NUM_LEDS; i++) {
-		leds[i] = deadGreen;
-		FastLED.show();
-		FastLED.delay(30);
-	}
+    Blynk.syncAll();
+    for(int i = 0; i < NUM_LEDS; i++) {
+        leds[i] = deadGreen;
+        FastLED.show();
+        FastLED.delay(30);
+    }
 }
 
 // Uptime timer
 void blynkUptime() {
-  	Blynk.virtualWrite(V2, millis() / 1000);
+      Blynk.virtualWrite(V2, millis() / 1000);
 }
 
 // Rainbow wave stuff
 void rainbow_wave(uint8_t thisSpeed, uint8_t deltaHue) { 
-	uint8_t thisHue = beat8(thisSpeed,255);
-	fill_rainbow(leds, NUM_LEDS, thisHue, deltaHue);
-	FastLED.show();
+    uint8_t thisHue = beat8(thisSpeed,255);
+    fill_rainbow(leds, NUM_LEDS, thisHue, deltaHue);
+    FastLED.show();
 }
 
 // Color Cradle
 void breathing_wave(uint8_t thisHue, uint8_t colorRange, uint8_t thisSpeed, int thisS, int thisV){
-	uint8_t lowHue = thisHue - colorRange;
-	uint8_t highHue = thisHue + colorRange;
-	uint8_t currentHue = beatsin8(thisSpeed, lowHue, highHue);
-	fill_solid(leds, NUM_LEDS, CHSV(currentHue, thisS, thisV));
-	FastLED.show();
+    uint8_t lowHue = thisHue - colorRange;
+    uint8_t highHue = thisHue + colorRange;
+    uint8_t currentHue = beatsin8(thisSpeed, lowHue, highHue);
+    fill_solid(leds, NUM_LEDS, CHSV(currentHue, thisS, thisV));
+    FastLED.show();
 }
 
 // Rainbow with one-color-at-a-time
 void rainbow_constant(uint8_t thisSpeed, int thisS, int thisV){
-	uint8_t thisHue = beat8(thisSpeed, 255);
-	fill_solid(leds, NUM_LEDS, CHSV(thisHue, thisS, thisV));
-	FastLED.show();
+    uint8_t thisHue = beat8(thisSpeed, 255);
+    fill_solid(leds, NUM_LEDS, CHSV(thisHue, thisS, thisV));
+    FastLED.show();
 }
 
 // This thing isnt supposed to work but it somehow does so here be dragons
 TGradientDirectionCode getGradMode(){
-	switch(gradientMode) {
-		case 0: return FORWARD_HUES;
-		case 1: return BACKWARD_HUES;
-		case 2: return SHORTEST_HUES;
-		case 3: return LONGEST_HUES;
-		default: return SHORTEST_HUES;
-	}
+    switch(gradientMode) {
+        case 0: return FORWARD_HUES;
+        case 1: return BACKWARD_HUES;
+        case 2: return SHORTEST_HUES;
+        case 3: return LONGEST_HUES;
+        default: return SHORTEST_HUES;
+    }
 }
 
 // SETUP
 void setup() {
-	Serial.begin(115200);
-	LEDS.addLeds<LED_TYPE, LED_DT>(leds, NUM_LEDS);
-	FastLED.setMaxPowerInVoltsAndMilliamps(5, 2000);
-	FastLED.setBrightness(max_bright); // Tweak max_bright in case of color tints - refer to the comment at the declaration
-	delay(500);
-	for(int i = 0; i < NUM_LEDS; i++) {
-		leds[i] = deadRed;
-		FastLED.show();
-		FastLED.delay(30);
-	}
-	Blynk.begin(auth, ssid, pass);
-	timer.setInterval(1000L, blynkUptime);
+    Serial.begin(115200);
+    LEDS.addLeds<LED_TYPE, LED_DT>(leds, NUM_LEDS);
+    FastLED.setMaxPowerInVoltsAndMilliamps(5, 2000);
+    FastLED.setBrightness(max_bright); // Tweak max_bright in case of color tints - refer to the comment at the declaration
+    delay(500);
+    for(int i = 0; i < NUM_LEDS; i++) {
+        leds[i] = deadRed;
+        FastLED.show();
+        FastLED.delay(30);
+    }
+    Blynk.begin(auth, ssid, pass);
+    timer.setInterval(1000L, blynkUptime);
 }
 
 // LOOP - SWITCHER
 void loop() {
-	// MAKE SURE TO KEEP THESE 2
-	Blynk.run();
-	timer.run();
-	//
-	switch(currentMode) {
-		case 0: fill_solid(leds, NUM_LEDS, deadBlack); //lights off mode
-				break;
-		case 1: fill_solid(leds, NUM_LEDS, CHSV(colorH, colorS, colorV)); //solid color
-				break;
-		case 2: rainbow_constant(currentSpeed, colorS, colorV); //solid color scroll
-				break;
-		case 3: breathing_wave(colorH, colorSpread, currentSpeed, colorS, colorV); //solid color sine
-				break;
-		case 4: rainbow_wave(currentSpeed, 1); //rgb mode
-				break;
-		case 5: fill_gradient(leds, NUM_LEDS, CHSV(colorH_g1, colorS_g1, colorV_g1), CHSV(colorH_g2, colorS_g2, colorV_g2), getGradMode());
-				break;
-	}
-	FastLED.show();
+    // MAKE SURE TO KEEP THESE 2
+    Blynk.run();
+    timer.run();
+    //
+    switch(currentMode) {
+        case 0: fill_solid(leds, NUM_LEDS, deadBlack); //lights off mode
+                break;
+        case 1: fill_solid(leds, NUM_LEDS, CHSV(colorH, colorS, colorV)); //solid color
+                break;
+        case 2: rainbow_constant(currentSpeed, colorS, colorV); //solid color scroll
+                break;
+        case 3: breathing_wave(colorH, colorSpread, currentSpeed, colorS, colorV); //solid color sine
+                break;
+        case 4: rainbow_wave(currentSpeed, 1); //rgb mode
+                break;
+        case 5: fill_gradient(leds, NUM_LEDS, CHSV(colorH_g1, colorS_g1, colorV_g1), CHSV(colorH_g2, colorS_g2, colorV_g2), getGradMode());
+                break;
+    }
+    FastLED.show();
 }
