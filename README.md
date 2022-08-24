@@ -10,16 +10,19 @@ This is a small project of mine, an LED strip powered by NodeMCU 1.0 (ESP-12E Mo
 - Once installed, restart VS Code, and find the PlatformIO icon on the sidebar
 - Find `Miscellanceous` > `Clone Git Project`
 - Clone the project into your local workspace
+- Open a terminal window in the cloned repository root
+- Do `git submodule update --init`
+- Make sure lib/Blynk is not empty
 - Fine-tune the `main.cpp and secrets.h` to your own preferences and hardware
 - Install the dependencies in the PlatformIO Library Manager
 - Build the project or upload it if you have a ESP8266 board connected
 
 **With Arduino IDE**
 - Make sure you have installed the necessary tools for ESP8266
-- Clone the repository locally
+- Clone the repository locally with the `--recurse-submodules` flag: `git clone https://github.com/kerichdev/esp8266ledstrip --recurse-submodules`
 - Open `main.cpp` and `secrets.h`
 - In Tools > Board: Choose `NodeMCU 1.0 (ESP-12E Module)`; Upload Speed: `115200`; CPU Frequency: `80 MHz`
-- Using the Arduino IDE Library Manager, install the libraries: Blynk and FastLED. Latest versions should work, but in case of issues, fallback to `FastLED@3.5.0` and `Blynk@1.0.1`
+- Using the Arduino IDE Library Manager, install the FastLED lubrary. Latest version should work, but in case of issues, fallback to `FastLED@3.5.0`
 - Fine-tune the `main.cpp` and `secrets.h` to your own preferences and hardware
 - Build or Upload the sketch to your board
 
