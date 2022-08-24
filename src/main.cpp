@@ -224,20 +224,18 @@ void setup() {
 
 // LOOP - SWITCHER
 void loop() {
-    // MAKE SURE TO KEEP THESE 2
     Blynk.run();
     timer.run();
-    //
     switch(currentMode) {
-        case 0: fill_solid(leds, NUM_LEDS, deadBlack); //lights off mode
+        case 0: fill_solid(leds, NUM_LEDS, deadBlack); // Lights Off
                 break;
-        case 1: fill_solid(leds, NUM_LEDS, CHSV(colorH, colorS, colorV)); //solid color
+        case 1: fill_solid(leds, NUM_LEDS, CHSV(colorH, colorS, colorV)); // Solid Color
                 break;
-        case 2: rainbow_constant(currentSpeed, colorS, colorV); //solid color scroll
+        case 2: rainbow_constant(currentSpeed, colorS, colorV); // RGB - No Wave
                 break;
-        case 3: color_cradle(colorH, colorSpread, currentSpeed, colorS, colorV); //solid color sine
+        case 3: color_cradle(colorH, colorSpread, currentSpeed, colorS, colorV); // Color Cradle
                 break;
-        case 4: rainbow_wave(currentSpeed, 1); //rgb mode
+        case 4: rainbow_wave(currentSpeed, 1); // RGB - Sine Wave
                 break;
         case 5: fill_gradient(leds, NUM_LEDS, CHSV(colorH_g1, colorS_g1, colorV_g1), CHSV(colorH_g2, colorS_g2, colorV_g2), getGradMode());
                 break;
