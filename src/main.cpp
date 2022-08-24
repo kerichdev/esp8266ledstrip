@@ -156,7 +156,7 @@ BLYNK_WRITE(V20) {
         colorV = 255;
         presetLights = "none";
     }
-}
+} // TODO: Move the preset lights switchback outside of the IFs, may or may not work
 
 BLYNK_CONNECTED() {
     Blynk.syncAll();
