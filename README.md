@@ -27,7 +27,7 @@ This is a small project of mine, an LED strip powered by NodeMCU 1.0 (ESP-12E Mo
 - Build or Upload the sketch to your board
 
 ### Hardware
-- The project is intended for 3-pin addressable LED strips: `5V`, `GND` and `DI` (Data In, but name my vary)
+- The project is intended for 3-pin addressable LED strips: `5V`, `GND` and `DI` (Data In, but name may vary)
 - Make sure the LED strip has its own power supply, and is **not** connected to ESP8266's 3.3V/VIN pin
 - Fill out the correct hardware info about your strip, like the amount of pins
 
