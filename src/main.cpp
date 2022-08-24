@@ -77,7 +77,7 @@ BLYNK_WRITE(V18) { gradientMode = param.asInt(); }
 BLYNK_WRITE(V11) { currentMode = (assistantOverride) ? param.asInt() : currentMode; }
 
 // Preset list - only for assistant functionality - add as much as needed.
-
+// CASE SWITCH *DOES NOT WORK* - this issue is yet to be resolved but please don't make PRs with case switch instead of an if else tree
 BLYNK_WRITE(V20) {
     presetLights = (assistantOverride) ? param.asString() : "none";
 
@@ -180,7 +180,7 @@ void rainbow_wave(uint8_t thisSpeed, uint8_t deltaHue) {
 }
 
 // Color Cradle
-void breathing_wave(uint8_t thisHue, uint8_t colorRange, uint8_t thisSpeed, int thisS, int thisV){
+void color_cradle(uint8_t thisHue, uint8_t colorRange, uint8_t thisSpeed, int thisS, int thisV){
     uint8_t lowHue = thisHue - colorRange;
     uint8_t highHue = thisHue + colorRange;
     uint8_t currentHue = beatsin8(thisSpeed, lowHue, highHue);
@@ -235,7 +235,7 @@ void loop() {
                 break;
         case 2: rainbow_constant(currentSpeed, colorS, colorV); //solid color scroll
                 break;
-        case 3: breathing_wave(colorH, colorSpread, currentSpeed, colorS, colorV); //solid color sine
+        case 3: color_cradle(colorH, colorSpread, currentSpeed, colorS, colorV); //solid color sine
                 break;
         case 4: rainbow_wave(currentSpeed, 1); //rgb mode
                 break;
