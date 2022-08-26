@@ -1,5 +1,8 @@
 # ESP8266 Blynk-based LED Strip
-This is a small project of mine, an LED strip powered by NodeMCU 1.0 (ESP-12E Module) board, and using Blynk as a backend.
+
+![Blynk <3 Espressif](https://github.com/kerichdev/esp8266ledstrip/blob/master/blynkxespressif.png?raw=true)
+
+This is a small project of mine, an LED strip powered by a NodeMCU 1.0 (ESP-12E Module) board, and using Blynk as a backend.
 
 ## Usage
 **Make sure to fill out src/secrets.h, as well as all the LED strip configurations in src/main.cpp if you want to use this with your own strip!**
